@@ -1,4 +1,5 @@
-# Simulación de Henry Challenge para Practicar - JAVASCRIPT
+ Esta es una prueba de clon git.
+ # Simulación de Henry Challenge para Practicar - JAVASCRIPT
 
 ## Lee con atención todo el material.
 
