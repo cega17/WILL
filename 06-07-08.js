@@ -6,20 +6,26 @@
 */
 function crearClasePersona() {
   class Persona {
-    constructor(nombre, edad, hobbies, amigos) {
+    constructor(nombre, edad, hobbies, amigos) {//persona1 = {nombre, edad, hobbies, amigos}
       // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
-
+      this.nombre=nombre; 
+      this.edad=edad;//_ para no ser visibles desde afuera del objeto
+      this.hobbies=hobbies;
+      this.amigos=amigos;
+    
     }
-
+  
     addFriend(nombre, edad) {
       // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
       // No debe retornar nada.
 
       // Tu código aca:
+      var amigo = {nombre: nombre, edad: edad};
+      this.amigos.push(amigo);
 
     }
 
@@ -28,6 +34,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -38,7 +45,14 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
+      return (this.amigos).map((element)=>{ return element['nombre']; });
+       
+      //var nombreAmigos = [];
 
+      //for(var i = 0; this.amigos.lenght; i++){
+
+      //}
+      //return nombreAmigos;
     }
 
     getHobbies() {
@@ -47,6 +61,8 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+      return this.hobbies.push(hobby);
+
 
     }
 
@@ -66,7 +82,12 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
+      var totalEdades = 0;
 
+      for(var i = 0; i < this.amigos.length; i++){
+        totalEdades = totalEdades + this.amigos[i].edad;
+      }
+      return totalEdades / this.amigos.length;
     }
   };
 
